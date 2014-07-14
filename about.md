@@ -4,8 +4,20 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+My name is Brian Rackle. I am a software engineer who focuses on high performance C++. I apply my passion for performance with C++ and [computational geometry][cg] to make [GIS][gis] software. I currently work for [esri][esri] after a long and fruitful internship at [Autodesk][autodesk]. 
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Find Me
+-------
+ - [Twitter][twitter] --- the best way to contact me
+ - [GitHub][github] --- find my code
+ - [Flickr][flickr] --- photography
+ - [Facebook][facebook] --- become a friend
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+[cg]: http://en.wikipedia.org/wiki/Computational_geometry
+[gis]: http://en.wikipedia.org/wiki/Geographic_information_system
+[esri]: http://www.esri.com/
+[autodesk]: http://www.autodesk.com/
+[twitter]: https://twitter.com/brianrackle
+[github]: https://github.com/brianrackle
+[flickr]: https://www.flickr.com/photos/rackle/
+[facebook]: https://www.facebook.com/rackle
