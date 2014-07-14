@@ -6,7 +6,7 @@ categories: update basics history
 tags: c++ c history basics return int
 ---
 
-Hello world! Rather cliché isn't it? Is there anything interesting about `HelloWorld`? Most would say no, but I am sure we can discover a few interesting bits of information about this mundane code. Let's analyze the most ubiquitous program ever written.
+Hello world! Rather cliché isn't it? Is there anything interesting about Hello World? Most would say no, but I am sure we can discover a few interesting bits of information about this mundane code. Let's analyze the most ubiquitous program ever written.
 
 {% highlight c++ %}
 #include <iostream>
@@ -21,9 +21,9 @@ int main()
 
 Boring right? Maybe not! 
 
-Int or Void
----
-Many compilers support a `void` return value but it is not spec. Returning an `int` allows the program to let the operating system know if the program executed successfully. The only valid definitions for `main` are:
+## Int or Void
+
+Let's start with the basics, the return value. Returning an `int` allows the program to let the operating system know if the program executed successfully. And while many compilers support a `void` return value but it is not spec.  The only valid definitions for `main` are:
 
 **3.6.1.2**
 
@@ -31,11 +31,11 @@ Many compilers support a `void` return value but it is not spec. Returning an `i
 > and
 > int main(int argc, char* argv[]) { /* ... */ }
 
-What to Return From Main
----
-Any value can be returned from `main`. However, the only <i class="icon-share"></i>[spec defined value][exit_status] for returning success and failure is `EXIT_SUCCESS`/`zero` and `EXIT_FAILURE`. `zero` will be return automatically by the function is no return statement is defined.
+## What to Return
 
-It is also possible to exit the program at any point by calling `std::exit(EXIT_SUCCESS)` or `std::exit(EXIT_FAILURE)`. However, using `std::exit` should be done with caution because <i class="icon-share"></i>[destructors of variables with automatic storage durations are not called][exit], as the spec explains:
+Any integer value can be returned from `main`. For success, return `EXIT_SUCCESS` or `0`. For failure, return `EXIT_FAILURE`. If you need multiple failure states, any non-zero integer can be used. Just remember to note what each failure state means.
+
+It is also possible to exit the program at any point by calling `std::exit(EXIT_SUCCESS)` or `std::exit(EXIT_FAILURE)`. However, using `std::exit` should be done with caution because objects of local scope, thread local scope, or static scope will not have their destructors executed, as the spec explains:
 
 **18.5.3**
 
@@ -43,25 +43,14 @@ It is also possible to exit the program at any point by calling `std::exit(EXIT_
 
 ___
 
-Also note that `main` is the only function that does not require a return statement despite deing defined with an `int` return value.
-
-**3.6.2**
-
-> If control reaches the end of main without encountering a return statement, the eﬀect is that of executing
-> &nbsp;&nbsp;&nbsp;&nbsp;return 0;
-
-Some compilers  allow omitting the `return` statement for any function. On `x86`, the value stored in the `eax` register is used to store the function `return` value. If the `return` value has not been set, then the value in `eax` remains undefined. 
+It is also important to know that `main` is the __*only*__ function that does not require a return statement. When no return statement is defined, `0` is automatically returned by `main`. Some compilers  allow omitting the return statement for any function. To understand why this might be a problem let's look at how one cpu architecture handles return values. On *x86*, the return value if stored in the *eax* register. The *eax* register is also used for temporary storage because registers are fast and there are a limited number of them. This means that if the return value has not been set, then the value in *eax* remains undefined. So the function will also return an undefined value. This is not good if you want other people to use your functions. 
 
 The History of Return Values
 ---
-Originally, `C` did not have a `void` type. Not having `void` meant that every function needed to define some `return` value. This lead to programmers adopting the convention of explicitly using `return 0;` on any function that did not require a return value.
+So why is returning zero so common? Originally, *C* did not have a `void` type. Not having `void` meant that every function needed to define some return value. A common practice was to use an 'int' return value when none was needed. And as we learned before, if we have a return value, we need to return a value, or noone will want to use our code. This lead to programmers adopting the convention of explicitly using `return 0;` on any function that did not require a return value. As time went on eventually `0` introduced the `void` type but it is still very common to see functions `return 0;`.
 
 Summation
 ---
 If you made it here, I applaud you. Understanding specs is not the most exciting thing but hopefully you learned something and can use the information to become a better programmer.
 
 See you next time!
-
-
-[exit_status]: http://en.cppreference.com/w/cpp/utility/program/EXIT_status
-[exit]: http://en.cppreference.com/w/cpp/utility/program/exit
