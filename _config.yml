@@ -15,3 +15,12 @@ kramdown:
   input: GFM
 permalink: pretty
 
+authors:
+  brian:
+    display_name: Brian Rackle
+    gravatar: 6bece3435bb5ac00c81c6e6468d15993
+    email: rackle@outlook.com
+    web: http://www.brainstembreakfast.com/
+    twitter: brianrackle
+    github: brianrackle
+

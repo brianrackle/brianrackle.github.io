@@ -4,6 +4,7 @@ title:  "Hello World!"
 date:   2014-07-13 22:02:44
 categories: update basics history
 tags: c++ c history basics return int
+author: brian
 ---
 
 Hello world! Rather cliché isn't it? Is there anything interesting about Hello World? Most would say no, but I am sure we can discover a few interesting bits of information about this mundane code. Let's analyze the most ubiquitous program ever written.
