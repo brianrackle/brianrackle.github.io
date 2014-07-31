@@ -1,6 +1,6 @@
 # Site settings
 title: Brainstem Breakfast
-email: rackle@outlook.com
+email: brainstembreakfast@outlook.com
 description: "Programming nuggets for your brain"
 baseurl: ""
 url: "http://brainstembreakfast.com"
@@ -19,8 +19,6 @@ authors:
   brian:
     display_name: Brian Rackle
     gravatar: 6bece3435bb5ac00c81c6e6468d15993
-    email: rackle@outlook.com
-    web: http://www.brainstembreakfast.com/
     twitter: brianrackle
     github: brianrackle
 

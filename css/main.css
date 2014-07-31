@@ -260,6 +260,13 @@ a:visited { color: #205caa; }
 
 .post pre.terminal code { background-color: #333; }
 
+.post table{margin-bottom:20px}
+.post table th,table td{padding:8px;line-height:20px;text-align:left;vertical-align:top;border-top:1px solid #dddddd}
+.post table th{font-weight:bold}
+.post table thead th{vertical-align:bottom}
+.post table caption+thead tr:first-child th,table caption+thead tr:first-child td,table colgroup+thead tr:first-child th,table colgroup+thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}
+.post table tbody+tbody{border-top:2px solid #dddddd}
+
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/
 
