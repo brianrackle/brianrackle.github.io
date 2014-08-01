@@ -7,6 +7,7 @@ tags: c++ type traits template class stream output operator
 author: brian
 ---
 
+
 Visualizing data is hugely important to the world of algorithms. Throughout my career I have encountered innumerable problems that are incredibly hard to solve until I can view the problem outside of code. Many problems are just easier to understand when drawn. Simple mathematical expressions can become mangled and hard to understand when written as code. And even with the best debugging tools, things like data scope can turn understanding simple data into a practice of jumping between scopes, and dealing with hard to navigate data structures.
 
 ## Building a Framework
@@ -40,6 +41,8 @@ While there are infinite ways to approach this problem, I am adding an additiona
 
 Great, let's build the solution!
 
-### Markdown Output
+### Coding
+
+[Link to the full solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/Markdown.hpp)
 
 
