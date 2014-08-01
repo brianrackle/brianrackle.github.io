@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Rotating Around the Origin"
-date:   2014-07-13 22:02:44
+date:   2014-07-31 22:02:44
 categories: update c++ vector algebra trigonometry lambda
 tags: c++ vector rotate matrix angle sin cos atan2 lambda polar coordinates line segment origin axis
 author: brian
