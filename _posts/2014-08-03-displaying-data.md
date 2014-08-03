@@ -123,6 +123,25 @@ inline std::string table_header(const char * format, const char  * name)
 
 The table_header functions are similar to the table_row functions. `const char * format` is the alignment parameter which accepts C-style string constants using 'l' 'c' 'r' to represent left, center and right alignment. The name parameters are the column headers. Similar to the table_row functions, the table_header functions work recursively to consume the parameter pack. This time however, the format parameter is carried through to the base case since, the column orientation occurs after the column headers. 
 
+Here is simple code to test the table:
+
+{% highlight c++ %}
+
+std::ofstream outfile("outfile.txt");
+outfile << table_header("llrr", "Word 1", "Word 2", "Word 3", "Word 4")
+	<< table_row("hi", "how", "are", "you")
+	<< table_row("I", "am", "fine", "thanks");
+
+{% endhighlight %}
+
+And the output:
+
+| Word 1 | Word 2 | Word 3 | Word 4|
+|:--- |:--- | ---:| ---:|
+| hi | how | are | you|
+| I | am | fine | thanks|
+
+
 Below are all the Markdown functions I have tackled for my initial needs. You can find the current project on [github](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/Markdown.hpp) Now we can start exploring our data.
 
 {% highlight c++ %}
