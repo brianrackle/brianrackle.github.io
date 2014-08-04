@@ -29,7 +29,7 @@ The code isn't hard, but it does lack clarity. Thankfully, C++11 introduces a be
   * a monotonic clock, meaning that time can only increase
   * tick rate doesn't change
 
-We will look at why we need three different clocks later. For now it is important to note that only `std::chrono::steady_clock` is guaranteed to give a stable tick rate. When comparing times, a stable tick rate is exactly what is needed to get a reliable assessment of how various durations relate. 
+We will look at why we need three different clocks later. For now, it is important to note that only `std::chrono::steady_clock` is guaranteed to give a stable tick rate. When comparing times, a stable tick rate is exactly what is needed to get a reliable assessment of how various durations relate. 
 
 ## Timing Things
 
