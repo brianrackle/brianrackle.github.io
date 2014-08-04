@@ -7,8 +7,6 @@ tags: c++ type traits template class stream output operator
 author: brian
 ---
 
-
-
 Visualizing data is hugely important to the world of algorithms. Throughout my career I have encountered innumerable problems that are incredibly hard to solve until I can view the problem outside of code. Many problems are just easier to understand when drawn. Simple mathematical expressions can become mangled and hard to understand when written as code. And even with the best debugging tools, things like data scope can turn understanding simple data into a practice of jumping between scopes, and dealing with hard to navigate data structures.
 
 ## Building a Framework
@@ -45,14 +43,14 @@ While there are infinite ways to approach this problem, I am adding the addition
 
 Great, let's build the solution!
 
-### Coding
+## The Code
 
-[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/Markdown.hpp)
+[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/markdown.hpp)
 
 Markdown, is a human readable, way of formatting text that is convertible to proper HTML syntax. All we need to do is take Markdown syntax, make functions out of it and we are good to go. I will use [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown) since it has extras that can come in handy. I will break down the construction of a single Markdown element, [the table element](https://help.github.com/articles/github-flavored-markdown#tables), and then use that as a guide.
 
 
-#### Table
+### Table
 
 * column headers
 * column orientation
@@ -60,6 +58,7 @@ Markdown, is a human readable, way of formatting text that is convertible to pro
 
 The table needs to allow creation of multiple column headers, orientations and contents. This can be accomplished using C++11 parameter packs. A parameter pack let's a function take a variable number of templated arguments. Inside the body of the function, we can expand that parameter pack to feed our next function call.
 
+#### Row
 {% highlight c++ %}
 //create markdown table row
 template <typename ... Types>
@@ -89,6 +88,7 @@ inline std::string table_row(const char * content)
 
 We still have satisfied the base case, and also present a function which is usable on it's own.
 
+#### Header
 {% highlight c++ %}
 //create markdown table header
 template<class ... Types>
@@ -123,6 +123,8 @@ inline std::string table_header(const char * format, const char  * name)
 
 The table_header functions are similar to the table_row functions. `const char * format` is the alignment parameter which accepts C-style string constants using 'l' 'c' 'r' to represent left, center and right alignment. The name parameters are the column headers. Similar to the table_row functions, the table_header functions work recursively to consume the parameter pack. This time however, the format parameter is carried through to the base case since, the column orientation occurs after the column headers. 
 
+### The Output
+
 Here is simple code to test the table:
 
 {% highlight c++ %}
@@ -141,7 +143,7 @@ And the output:
 | hi | how | are | you|
 | I | am | fine | thanks|
 
-
+### All The Codes!
 Below are all the Markdown functions I have tackled for my initial needs. You can find the current project on [github](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/Markdown.hpp) Now we can start exploring our data.
 
 {% highlight c++ %}
