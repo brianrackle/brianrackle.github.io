@@ -7,7 +7,9 @@ tags: c++ c++11 stl duration chrono time template tick clock
 author: brian
 ---
 
-Timing in C++ is annoying. There are so many different ways to accomplish timing, all of which involve C functions. Also, timing tends to clutter code with blocks like:
+Timing in C++ can be tedious. There are so many different ways to accomplish stop-watch functionality, all of which involve C functions. Thankfully, C++11 introduces a brand new header that makes it easy time things accurately with very little code. C++11 once again saves the world from unclear C-style code, and provides a great specification for handling time in many different ways.
+
+The old C-style way of timing something:
 
 {% highlight c++ %}
 clock_t begin = clock();
@@ -15,7 +17,7 @@ clock_t begin = clock();
 double duration = (double)(clock - begin) / CLOCKS_PER_SEC;
 {% endhighlight %}
 
-The code isn't hard but can get repetitious. Thankfully, C++11 introduces a better way to manage date and time with the, `<chrono>` header. Useful for timing, STL introduces the following:
+The code isn't hard, but it does lack clarity. Thankfully, C++11 introduces a better way to manage date and time with the `<chrono>` header. `<chrono>` is best understood by starting with the building block of measuring time, the clock. And amazingly we are given more than a single choice of clocks. The following clocks are available in `<chono>`:
 
 * `std::chrono::high_resolution_clock`
   * a clock with the smallest tick period available.
@@ -27,10 +29,11 @@ The code isn't hard but can get repetitious. Thankfully, C++11 introduces a bett
   * a monotonic clock, meaning that time can only increase
   * tick rate doesn't change
 
-Only `std::chrono::steady_clock` is guaranteed to give a stable tick rate. When comparing times, a stable tick rate is exactly what is needed to get a reliable assessment of how various durations relate. 
+We will look at why we need three different clocks later. For now it is important to note that only `std::chrono::steady_clock` is guaranteed to give a stable tick rate. When comparing times, a stable tick rate is exactly what is needed to get a reliable assessment of how various durations relate. 
 
 ## Timing Things
-Let's say you want to compare the performance of two algorithms. Here are the results
+
+Let's say you want to compare the performance of two algorithms. You run your timing algorithm using `std::chrono::system_clock` which on your system defines `is_steady` as false, and these are your results:
 
 #### Unstable Tick Rate
 
@@ -40,6 +43,8 @@ Let's say you want to compare the performance of two algorithms. Here are the re
 | algo_2 | 3400 milliseconds | 2000 milliseconds |
 
 Wow, something went seriously wrong here. We timed "algo_2" as being slower than "algo_1", but in reality it was 1/3 faster. How did this happen? Well, in the middle of processing "algo_2", the system changed the clock of the cpu, perhaps for thermal reasons, and with that change the tick rate changed as well. Each tick started happening faster than when we ran "algo_1". Over the long run, the system will be able to adjust the tick rate with the changes in clock speed, and can provide an accurate wall clock time. But over small intervals, when comparing two durations, a changing tick rate will not give us a stable result.
+
+Here are the results when using `std::chrono::steady_clock` which will always, on any system, define `is_steady` as true:
 
 #### Stable Tick Rate
 
@@ -89,7 +94,7 @@ auto begin = steady_clock::now();
 auto duration = begin - steady_clock::now();
 {% endhighlight %}
 
-The C++ version is a little bit simpler than in C, but there is an solution that better fits our needs.
+The C++ version is a little bit simpler than in C, but I think it is important to explore possible ways to engineer an easier and clearer way to time code.
 
 {% highlight c++ %}
 template<class D = std::chrono::nanoseconds, class F>
@@ -104,11 +109,11 @@ inline D time_it(F && f)
 }
 {% endhighlight %}
 
-Leveraging templates, I have built the time_it function which takes a lambda expression and wraps it in a timing block. Additionally, time_it will cast the result to the passed in duration, defaulting to `std::chono::nanoseconds`. This solution gives us two advantages over the previously presented solutions. First, we have removed tedious timing code from our function. Second, clock choice and duration interval are now independent of each other. So even if a clock defaults to nanoseconds, it is possible to get results in seconds.
+Leveraging templates, I have built the `time_it` function which takes a lambda expression and wraps it in a timing block. Additionally, `time_it` will cast the result to the passed in duration, defaulting to `std::chono::nanoseconds`. This solution gives us two advantages over the previously presented solutions. First, we have removed tedious timing code from our function. Second, clock choice and duration interval are now independent of each other. So even if a clock defaults to nanoseconds, it is possible to get results in seconds.
 
 ### The Output
 
-Here is a simple test of the new time_it function.
+Here is a simple test of the new `time_it` function.
 
 {% highlight c++ %}
 using namespace std::chrono;
@@ -121,4 +126,4 @@ outfile << "milliseconds: " + std::to_string(result.count());
 
 milliseconds: 7939
 
-Success! I hope you have learned how to more effectively and accurately time things in C++11. And that I have helped you understand how you can engineer better solutions to common timing problems.
+Success! I hope you have learned how to more effectively and accurately measure time in C++11.
