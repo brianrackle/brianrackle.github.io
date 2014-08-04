@@ -15,31 +15,31 @@ So how can one simplify the process of understanding our own algorithms? Well, d
 
 ### Problems
 
-* changing scopes
+* __changing scopes__
   * varying scopes make it hard to view the problem scope or dataset as a single entity
-* complex data structures
+* __complex data structures__
   * data structures can hide the values we are interested in
-* varying lifetimes
+* __varying lifetimes__
   * objects have varying lifetimes making it difficult to view related values side-by-side
 
 ### Requirements
 
-* scope invariant
+* __scope invariant__
   * allow for side-by-side viewing of values that are in different scopes
-* simple representation
+* __simple representation__
   * simple representation of data nested inside of complex data structures
-* data retention
+* __data retention__
   * retain values even when the lifetime of the value ends
 
 __bonus feature__
 
-* KISS (keep it simple stupid)
+* __KISS (keep it simple stupid)__
   * don't over-engineer the solution
 
 
 ### Solution
 
-While there are infinite ways to approach this problem, I am adding the additional requirement of keeping the implementation simple. I propose using a file based approach, simplifying the problems with data persistence. Outputting values to a document will fulfill requirements __1__ (scope invariant), __3__ (data retention) and bonus feature __4__ (KISS). Naturally, storing the values in a document leads us to consider formatting to fulfill requirement __2__ (simple representation). Considering the options, HTML stands out as a viable choice. However, dealing with the DOM across scopes and lifetimes is a fairly complex task. Alternatively, [Markdown](http://daringfireball.net/projects/markdown/) gives us HTML-like functionality and lets us completely bypass the DOM problem, as we can keep the output linear.
+While there are infinite ways to approach this problem, I am adding the additional requirement of keeping the implementation simple. I propose using a file based approach, simplifying the problems with data persistence. Outputting values to a document will fulfill requirements __1 (scope invariant)__, __3 (data retention)__ and bonus feature __4 (KISS)__. Naturally, storing the values in a document leads us to consider formatting to fulfill requirement __2__ (simple representation). Considering the options, HTML stands out as a viable choice. However, dealing with the DOM across scopes and lifetimes is a fairly complex task. Alternatively, [Markdown](http://daringfireball.net/projects/markdown/) gives us HTML-like functionality and lets us completely bypass the DOM problem, as we can keep the output linear.
 
 Great, let's build the solution!
 
@@ -52,9 +52,9 @@ Markdown, is a human readable, way of formatting text that is convertible to pro
 
 ### Table
 
-* column headers
-* column orientation
-* contents
+* __column headers__
+* __column orientation__
+* __contents__
 
 The table needs to allow creation of multiple column headers, orientations and contents. This can be accomplished using C++11 parameter packs. A parameter pack let's a function take a variable number of templated arguments. Inside the body of the function, we can expand that parameter pack to feed our next function call.
 
@@ -74,9 +74,9 @@ inline std::string table_row()
 }
 {% endhighlight %}
 
-The table_row functions work together to recurse through the parameter pack, `Types ... rest_content`, consuming a single parameter at a time. This functionality is beneficial because the parameter pack function calls are expanded at compile time, so every parameter is checked by the compiler to be a `const char *`, much safer than C-style compile time variadic expansion. Obviously we need a base case for our recursion which is where `std::string table_row()` comes in; serving to terminate the recursion.
+The `table_row` functions work together to recurse through the parameter pack, `Types ... rest_content`, consuming a single parameter at a time. This functionality is beneficial because the parameter pack is expanded at compile time, so every parameter is checked by the compiler to be a `const char *`, much safer than C-style compile time variadic expansion. Obviously we need a base case for our recursion which is where `std::string table_row()` comes in, serving to terminate the recursion.
 
-However, there is something incorrect about the table_row function. Our base case, while correct when called during recursion, is not correct when called on it's own. To fix it we need to modify the parameters so a row must consist of at least a single piece of content.
+However, there is something incorrect about the `table_row` function. Our base case, while correct when called during recursion, is not correct when called on it's own. To fix it we need to modify the parameters so a row must consist of at least a single piece of content.
 
 {% highlight c++ %}
 //table_row recursion base case
@@ -121,7 +121,7 @@ inline std::string table_header(const char * format, const char  * name)
 }
 {% endhighlight %}
 
-The table_header functions are similar to the table_row functions. `const char * format` is the alignment parameter which accepts C-style string constants using 'l' 'c' 'r' to represent left, center and right alignment. The name parameters are the column headers. Similar to the table_row functions, the table_header functions work recursively to consume the parameter pack. This time however, the format parameter is carried through to the base case since, the column orientation occurs after the column headers. 
+The `table_header` functions are similar to the `table_row` functions. `const char * format` is the alignment parameter which accepts C-style string constants using 'l' 'c' 'r' to represent left, center and right alignment. The name parameters are the column headers. Similar to the `table_row` functions, the `table_header` functions work recursively to consume the parameter pack. This time however, the format parameter is carried through to the base case since, the column orientation occurs after the column headers. 
 
 ### The Output
 
