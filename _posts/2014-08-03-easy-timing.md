@@ -7,7 +7,7 @@ tags: c++ c++11 stl duration chrono time template tick clock
 author: brian
 ---
 
-Timing in C++ can be tedious. There are so many different ways to accomplish stop-watch functionality, all of which involve C functions. Thankfully, C++11 introduces a brand new header that makes it easy time things accurately with very little code. C++11 once again saves the world from unclear C-style code, and provides a great specification for handling time in many different ways.
+Timing in C++ can be tedious. There are so many different ways to accomplish stop-watch functionality, all of which involve C functions. Thankfully, C++11 introduces a brand new header that makes it easy to time things accurately with very little code. C++11 once again saves the world from unclear C-style code, and provides a great specification for handling time in many different ways.
 
 The old C-style way of timing something:
 
