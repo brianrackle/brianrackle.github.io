@@ -109,7 +109,7 @@ inline D time_it(F && f)
 }
 {% endhighlight %}
 
-Leveraging templates, I have built the `time_it` function which takes a lambda expression and wraps it in a timing block. Additionally, `time_it` will cast the result to the passed in duration, defaulting to `std::chono::nanoseconds`. This solution gives us two advantages over the previously presented solutions. First, we have removed tedious timing code from our function. Second, clock choice and duration interval are now independent of each other. So even if a clock defaults to nanoseconds, it is possible to get results in seconds.
+Leveraging templates, I have built the `time_it` function which takes a lambda expression and wraps it in a timing block. Additionally, `time_it` will cast the result to the passed in duration, defaulting to `std::chrono::nanoseconds`. This solution gives us two advantages over the previously presented solutions. First, we have removed tedious timing code from our function. Second, clock choice and duration interval are now independent of each other. So even if a clock defaults to nanoseconds, it is possible to get results in seconds.
 
 ### The Output
 
