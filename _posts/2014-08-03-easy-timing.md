@@ -68,17 +68,17 @@ cout << "The number of seconds in a day: "
 
 There are also the following built-in [durations](http://en.cppreference.com/w/cpp/chrono/duration):
 
-* std::chrono::nanoseconds	
+* `std::chrono::nanoseconds`	
   * duration</*signed integer type of at least 64 bits*/, std::nano>
-* std::chrono::microseconds	
+* `std::chrono::microseconds`
   * duration</*signed integer type of at least 55 bits*/, std::micro>
-* std::chrono::milliseconds	
+* `std::chrono::milliseconds`	
   * duration</*signed integer type of at least 45 bits*/, std::milli>
-* std::chrono::seconds	
+* `std::chrono::seconds`	
   * duration</*signed integer type of at least 35 bits*/ >
-* std::chrono::minutes	
+* `std::chrono::minutes`	
   * duration</*signed integer type of at least 29 bits*/,std::ratio<60>>
-* std::chrono::hours	
+* `std::chrono::hours`	
   * duration</*signed integer type of at least 23 bits*/, std::ratio<3600>>
 
 ## The Code
