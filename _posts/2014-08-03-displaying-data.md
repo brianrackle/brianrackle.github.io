@@ -11,7 +11,7 @@ Visualizing data is hugely important to the world of algorithms. Throughout my c
 
 ## Building a Framework
 
-So how can one simplify the process of understanding our own algorithms? Well, do what humans have been doing for thousands of years, build tools. To build tools we need to establish the scope of our problem and then define the scope of our solution.
+So how can the process of understanding our own algorithms be simplified? Perhaps we should build some tools visualize our algorithms. To build tools we need to establish the scope of our problem and then define the scope of our solution.
 
 ### Problems
 
