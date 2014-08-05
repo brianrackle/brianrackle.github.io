@@ -124,6 +124,6 @@ std::ofstream outfile("outfile.txt");
 outfile << "milliseconds: " + std::to_string(result.count());
 {% endhighlight %}
 
-milliseconds: 7939
+__*`milliseconds: 7939`*__
 
 Success! I hope you have learned how to more effectively and accurately measure time in C++11.
