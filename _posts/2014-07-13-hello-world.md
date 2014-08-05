@@ -48,7 +48,7 @@ It is also important to know that `main` is the __*only*__ function that does no
 
 ## The History of Return Values
 
-So why is returning zero so common? Originally, *C* did not have a `void` type. Not having `void` meant that every function needed to define some return value. A common practice was to use an 'int' return value when none was needed. And as we learned before, if we have a return value, we need to return a value, or noone will want to use our code. This lead to programmers adopting the convention of explicitly using `return 0;` on any function that did not require a return value. As time went on eventually `0` introduced the `void` type but it is still very common to see functions `return 0;`.
+So why is returning zero so common? Originally, *C* did not have a `void` type. Not having `void` meant that every function needed to define some return value. A common practice was to use an `int` return value when none was needed. And as we learned before, if we have a return value, we need to return a value, or noone will want to use our code. This lead to programmers adopting the convention of explicitly using `return 0;` on any function that did not require a return value. As time went on eventually `0` introduced the `void` type but it is still very common to see functions `return 0;`.
 
 ## Summation
 
