@@ -1,15 +1,14 @@
 ---
 layout: post
-title:  A Wild Logo Appears!
+title:  "A Wild Logo Appears!"
 date:   2014-08-09 12:15:00
 categories: update design blog
 tags: design logo blog veronica beley
 author: brian
+excerpt: "</br>A huge thanks to Veronica Beley at <a href="http://www.veronicabeley.ca">http://www.veronicabeley.ca</a> for designing an amazing logo for this site! She took my design requirements and created something super original and amazing!"
 ---
 
-<p>
 A huge thanks to Veronica Beley at [http://www.veronicabeley.ca](http://www.veronicabeley.ca) for designing the amazing logo for this site! She took my design requirements and created something super original and amazing! 
-</p>
 
 Here is her design proposal:
 
