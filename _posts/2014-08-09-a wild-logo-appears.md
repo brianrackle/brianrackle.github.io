@@ -9,6 +9,10 @@ author: brian
 
 A huge thanks to Veronica Beley at http://www.veronicabeley.ca for designing the amazing logo for this site! She took my design requirements and created something super original and amazing! Here is her design proposal:
 
+<br />
+
 <img src="/assets/brainsteambreakfast_proposal.png" />
 
-I was overjoyed when I saw the designs. Please check her [work](http://www.veronicabeley.ca/portfolio.html) out. And don'tbe hesitant to hire her for your design projects!
+<br />
+
+I was overjoyed when I saw the designs. Please check her [work](http://www.veronicabeley.ca/portfolio.html) out. And don't be hesitant to hire her for your design projects!
