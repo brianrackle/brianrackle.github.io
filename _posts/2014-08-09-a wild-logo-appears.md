@@ -7,7 +7,7 @@ tags: design logo blog veronica beley
 author: brian
 ---
 
-A huge thanks to Veronica Beley at (http://www.veronicabeley.ca) for designing the amazing logo for this site! She took my design requirements and created something super original and amazing! Here is her design proposal:
+A huge thanks to Veronica Beley at [http://www.veronicabeley.ca](http://www.veronicabeley.ca) for designing the amazing logo for this site! She took my design requirements and created something super original and amazing! Here is her design proposal:
 
 <br />
 
