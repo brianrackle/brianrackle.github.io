@@ -9,18 +9,21 @@
 html, body { height: 100%; }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
   background-color: #fdfdfd;
 }
 
-h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {  
+  font-size: 100%; 
+  font-weight: 400; 
+}
 
-a         { color: #2a7ae2; text-decoration: none; }
+a         { color: #1db9cb; text-decoration: none; }
 a:hover   { color: #000; text-decoration: underline; }
-a:visited { color: #205caa; }
+a:visited { color: #0796a7; }
 
 /* Utility */
 
@@ -151,6 +154,8 @@ a:visited { color: #205caa; }
 .posts li { margin-bottom: 30px; }
 
 .posts .post-link {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
   font-size: 24px;
   letter-spacing: -1px;
   line-height: 1;
