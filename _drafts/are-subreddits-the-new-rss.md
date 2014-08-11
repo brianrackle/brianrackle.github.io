@@ -7,4 +7,5 @@ tags: c++
 author: brian
 ---
 
+Not just subreddits. Includes twitter as well.
 http://www.reddit.com/r/brainstembreakfast/
