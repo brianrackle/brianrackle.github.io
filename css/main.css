@@ -60,7 +60,7 @@ a:visited { color: #137c88; text-decoration: none; }
   position:absolute;
   bottom: 0;
   right: 0;
-  line-height: 34px;
+  line-height: 28px;
 }
 
 .site-nav .menu-icon { display: none; }
