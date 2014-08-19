@@ -6,3 +6,14 @@ categories: update c++
 tags: c++ 
 author: brian
 ---
+
+### Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+
+{% highlight c++ %}
+
+{% endhighlight %}
