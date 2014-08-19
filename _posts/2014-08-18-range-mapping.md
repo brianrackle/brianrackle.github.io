@@ -64,6 +64,33 @@ _TT scale_value(_FT value, _FT lowestFrom, _FT highestFrom, _TT lowestTo, _TT hi
 
 Running the above code with some sample data, this is the output:
 
+{% highlight c++ %}
+template <class T>
+class range
+{
+public:
+  range(T l, T h) : low(l), high(h){}
+
+  T low;
+  T high;
+};
+
+template <class _FT, class _TT>
+_TT scale_value(_FT value, _FT lowestFrom, _FT highestFrom, _TT lowestTo, _TT highestTo)
+{
+  return ((highestTo - lowestTo) * 
+    (value - lowestFrom) / (highestFrom - lowestFrom)) + lowestTo;
+}
+
+int main
+{
+  range<int> r0(std::numeric_limits<int>::lowest(), std::numeric_limits<int>::max());
+  range<double> r1(std::numeric_limits<double>::lowest(), std::numeric_limits<double>::max());
+
+  scale_value(r0.high, r0.low, r0.high, r1.low, r1.high)
+}
+{% endhighlight %}
+
 | Value |lowestFrom | highestFrom | lowestTo | highestTo | Return Value|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |-100 | -100 | 0 | 100 | 200 |  100 |
@@ -90,7 +117,7 @@ Now it is obvious what happened. When we subtract lowest from highest we end up 
 
 ### The Fix
 
-The solution here is to scale the from-range and to-range so that computing the total range will not overflow the data type. It would be possible to simply use an unsigned data type when only dealing with integral types, however floating-point types do not have unsigned versions. It is necessary to scale the values down so that `std::numeric_limits<T>::max() - std::numeric_limits<T>::lowest()` will not overflow `T`. This can be done by simply reducing all input values by half, performing the calculations and then expanding the result by double.
+The solution here is to scale the from-range and to-range so that computing the total range will not overflow the data type. It would be possible to simply use an unsigned data type if only dealing with integral types, however floating-point types do not have unsigned versions. Thus it is necessary to scale the values down so that `std::numeric_limits<T>::max() - std::numeric_limits<T>::lowest()` will not overflow `T`. This can be done by simply reducing all input values by half, performing the calculations and then expanding the result by double.
 
 {% highlight c++ %}
 template <class _FT, class _TT>
@@ -110,7 +137,7 @@ _TT scale_value(_FT value, _FT lowestFrom, _FT highestFrom, _TT lowestTo, _TT hi
 
 ### The Final Code
 
-Ok, I run the previous code and once again arrive at failure; the result is `1.#INF0e+000`. This time the problem occurs when expanding the projected value, `scaledOffsetResult`, by multiplying by 2. If we expand the value before adding `lowestTo` then we can overflow the data type. The solution is the expand after adding `lowestTo`. The full solution thus becomes:
+Running the previous code and once again failure is reached; the result is `1.#INF0e+000`. This time the problem occurs when expanding the projected value, `scaledOffsetResult`, by multiplying by 2. If we expand the value before adding `lowestTo` then we can overflow the data type. The solution is to expand after adding `lowestTo`. The full solution thus becomes:
 
 {% highlight c++ %}
 //scales 'value' from the range 'lowestFrom'/'highestFrom' to the range 'lowestTo'/'highestTo'
