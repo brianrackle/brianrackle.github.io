@@ -37,11 +37,11 @@ $$ projected = \frac{value}{range1} \times range2 $$
 
 The math is very easy. All that is needed is to generalize it to work with any pair of ranges. First, it is necessary to allow ranges that start at any number, not just 0. This is done by first shifting the range over to start at 0 and then shifting back after projecting using the following modification to our previous equation:
 
-$$ projected = ((\frac{(value - range1from)}{range1to - range1from}) \times (range2to - range2from)) + range2from $$
+$$ projected = \frac{value - range1from}{range1to - range1from} \times (range2to - range2from) + range2from $$
 
-$$ projected = (\frac{(value - range1from) \times (range2to - range2from)}{range1to - range1from}) + range2from $$
+$$ projected = \frac{(value - range1from) \times (range2to - range2from)}{range1to - range1from} + range2from $$
 
-$$ projected = (\frac{(32 - 0) \times (511 - 0)}{255 - 0}) + 0 $$
+$$ projected = \frac{(32 - 0) \times (511 - 0)}{255 - 0} + 0 $$
 
 $$ projected = 64.125490196 $$
 
