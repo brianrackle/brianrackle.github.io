@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Range Mapping and Projecting Values"
-date:   2014-08-17 22:02:44
+date:   2014-08-18 22:10:00
 categories: update c++
 tags: c++ 
 author: brian
