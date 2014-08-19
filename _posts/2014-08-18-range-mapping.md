@@ -62,7 +62,7 @@ _TT scale_value(_FT value, _FT lowestFrom, _FT highestFrom, _TT lowestTo, _TT hi
 
 ### Results
 
-Running the above code with some sample data, this is the output:
+Here is some code to test the algorithm:
 
 {% highlight c++ %}
 template <class T>
@@ -90,6 +90,8 @@ int main
   scale_value(r0.high, r0.low, r0.high, r1.low, r1.high)
 }
 {% endhighlight %}
+
+And here is the result:
 
 | Value |lowestFrom | highestFrom | lowestTo | highestTo | Return Value|
 |:---:|:---:|:---:|:---:|:---:|:---:|
