@@ -7,6 +7,12 @@ tags: c++
 author: brian
 ---
 
+# Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
 Projecting values from one range to another is a common need in certain problem sets. Simply getting a percent of a total is a basic form of range mapping. You have values in a given range and you need to translate those values into a range from 0 to 1. This is a basic operation we learn in middle school. Let's see if we can generalize the operation to map any range to any other range.
 
 ## The Basics
