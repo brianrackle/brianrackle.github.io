@@ -2,8 +2,8 @@
 layout: post
 title:  "Range Mapping and Projecting Values"
 date:   2014-08-18 22:10:00
-categories: update c++
-tags: c++ 
+categories: update c++ math projection interpolation
+tags: c++ math range interpolate projection type_traits
 author: brian
 ---
 

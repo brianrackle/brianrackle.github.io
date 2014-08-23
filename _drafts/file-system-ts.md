@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "template"
+date:   2014-05-01 22:02:44
+categories: update c++
+tags: c++ 
+author: brian
+---
+
+### Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+
+{% highlight c++ %}
+
+{% endhighlight %}
