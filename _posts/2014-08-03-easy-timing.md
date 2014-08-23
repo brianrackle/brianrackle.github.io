@@ -2,7 +2,7 @@
 layout: post
 title:  "Easy Timing"
 date:   2014-08-03 19:37:00
-categories: update c++ stl chrono time template
+categories: update c++
 tags: c++ c++11 stl duration chrono time template tick clock
 author: brian
 ---

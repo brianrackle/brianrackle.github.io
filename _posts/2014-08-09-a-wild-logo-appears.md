@@ -2,7 +2,7 @@
 layout: post
 title:  "A Wild Logo Appears"
 date:   2014-08-09 12:15:00
-categories: update design blog
+categories: update
 tags: design logo blog veronica beley
 author: brian
 ---

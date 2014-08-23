@@ -2,7 +2,7 @@
 layout: post
 title:  "Displaying Data (Engineering a Solution)"
 date:   2014-08-03 12:36:00
-categories: update c++ data visualization engineering
+categories: update c++
 tags: c++ type traits template class stream output operator
 author: brian
 ---

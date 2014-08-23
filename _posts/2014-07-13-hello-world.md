@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello World!"
 date:   2014-07-13 22:02:44
-categories: update basics history
+categories: update c++
 tags: c++ c history basics return int
 author: brian
 ---
