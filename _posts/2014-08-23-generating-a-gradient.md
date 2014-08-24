@@ -48,7 +48,7 @@ public:
 	value_type r, g, b;
 };
 
-inline rgb gradient_value(const double value, const rgb & from_color, const rgb & to_color)
+inline rgb gradient_value(const double_t value, const rgb & from_color, const rgb & to_color)
 {
 	using namespace range_map;
 	return {
@@ -94,7 +94,7 @@ public:
 	value_type r, g, b;
 };
 
-inline rgb gradient_value(const double value, const rgb & from_color, const rgb & to_color)
+inline rgb gradient_value(const double_t value, const rgb & from_color, const rgb & to_color)
 {
 	using namespace range_map;
 	return {
@@ -110,7 +110,7 @@ int main()
 	ostream << table_header("cccc", "Transition1", "Transition2", "Transition3", "Transition4");
 	for (int i = 0; i <= 10; ++i)
 	{
-		double v = (double)i / 10.0;
+		double_t v = (double_t)i / 10.0;
 		auto make_cell = [](std::string clr)->std::string
 		{return span(clr, color + "#ffffff", bg_color + clr); };
 
