@@ -47,7 +47,7 @@ $$ projected = 64.125490196 $$
 
 ## The Code
 
-[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/range_map.hpp)
+[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/source/range_map.hpp)
 
 Using the above generalized equation it is possible to write the following generalized algorithm:
 

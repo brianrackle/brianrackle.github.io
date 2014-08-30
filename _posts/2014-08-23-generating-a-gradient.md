@@ -34,7 +34,7 @@ $$ projected = value \times 165 + 42 $$
 
 ## The Code
 
-[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/gradient.hpp)
+[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/source/gradient.hpp)
 
 To leverage the code developed for the, ["Range Mapping and Projecting Values"]({% post_url 2014-08-18-range-mapping %}) post, it is convenient to simply use the `scale_value` function to interpolate each color component independently. This allows the `gradient_value` function to be reduced to just a few lines, with each RGB color component being mapped from a range of 0 to 1 to the range of `from_color.(r/g/b)` to `to_color.(r/g/b)`
 

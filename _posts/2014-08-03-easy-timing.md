@@ -83,7 +83,7 @@ There are also the following built-in [durations](http://en.cppreference.com/w/c
 
 ## The Code
 
-[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/time_it.hpp)
+[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/source/time_it.hpp)
 
 Even with the new `<chrono>` header in C++11, similar to C-style time measuring, we still need clunky code blocks to wrap the things we want to time. 
 

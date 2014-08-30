@@ -45,7 +45,7 @@ Great, let's build the solution!
 
 ## The Code
 
-[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/markdown.hpp)
+[The Full Solution](https://github.com/brianrackle/brainstem_breakfast/blob/master/source/markdown.hpp)
 
 Markdown, is a human readable, way of formatting text that is convertible to proper HTML syntax. All we need to do is take Markdown syntax, make functions out of it and we are good to go. I will use [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown) since it has extras that can come in handy. I will break down the construction of a single Markdown element, [the table element](https://help.github.com/articles/github-flavored-markdown#tables), and then use that as a guide.
 
@@ -144,7 +144,7 @@ And the output:
 | I | am | fine | thanks|
 
 ### All The Codes!
-Below are all the Markdown functions I have tackled for my initial needs. You can find the current project on [github](https://github.com/brianrackle/brainstem_breakfast/blob/master/BrainstemBreakfast/BrainstemBreakfast/Markdown.hpp) Now we can start exploring our data.
+Below are all the Markdown functions I have tackled for my initial needs. You can find the current project on [github](https://github.com/brianrackle/brainstem_breakfast/blob/master/source/markdown.hpp) Now we can start exploring our data.
 
 {% highlight c++ %}
 //create markdown table header
