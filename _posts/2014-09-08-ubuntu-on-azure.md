@@ -6,7 +6,7 @@ categories: update c++
 tags: c++ llvm clang c++11 c++14 emacs ubuntu libc++ linux shell azure
 ---
 
-I have decided to move my projects to Linux using the Clang compiler. The primary reason that spurred this decision is to be able to keep pace with the latest C++ features. believe C++14 refines C++11 and makes the language much more intuitive and concise. This being said, I need a compiler that supports the latest language features and currently Clang is king of [feature support](http://clang.llvm.org/cxx_status.html){:target="_blank"}. I could whine about Visual Studio but it is a great IDE. I use Visual Studio daily, and will continue to use it in projects when I see fit. However, right now for this blog, Ubuntu, Emacs and Clang is my new platform. 
+I have decided to move my projects to use Clang on Linux. The primary reason that spurred this decision is to be able to keep pace with the latest C++ features. C++14 refines C++11 and makes the language much more intuitive and concise. This being said, I need a compiler that supports the latest language features and currently Clang is king of [feature support](http://clang.llvm.org/cxx_status.html){:target="_blank"}. I could whine about Visual Studio but it is a great IDE. I use Visual Studio daily, and will continue to use it in projects when I see fit. However, right now for this blog, Ubuntu, Emacs and Clang is my new platform. 
 
 It has been six years since I last developed on Linux, and it seems some things have changed since then. As such, I have put together a guide to make setup as easy as possible. This guide is exactly how I have my machine setup and once you have your Ubuntu machine running all you have to do is run a single line of shell commands I have put together.
 
