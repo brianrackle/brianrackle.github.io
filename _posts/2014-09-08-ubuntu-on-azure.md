@@ -18,7 +18,7 @@ If you are unfamiliar with Azure, go to [http://azure.microsoft.com/](http://azu
 
 ## Azure Ubuntu Server 14.04 LTS
 
-Once you have your Azure account setup, you need to create your Linux VM. Follow these steps to create an Ubuntu server on Azure. Go to your [Portal](https://manage.windowsazure.com){:target="_blank"}. Click the [Virtual Machines](https://manage.windowsazure.com/#Workspaces/VirtualMachineExtension/vms){:target="_blank"} tab and down at the bottom left click "New", which looks something like: 
+Once you have your Azure account setup, you need to create your Linux VM. Go to your [Portal](https://manage.windowsazure.com){:target="_blank"}. Click the [Virtual Machines](https://manage.windowsazure.com/#Workspaces/VirtualMachineExtension/vms){:target="_blank"} tab and down at the bottom left click "New", which looks something like: 
 
 <img src="/assets/moving-to-ubuntu/new-vm.png" alt="new vm" width="400">
 
