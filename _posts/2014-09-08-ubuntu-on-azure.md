@@ -74,7 +74,7 @@ sudo apt-get update && sudo apt-get upgrade && sudo apt-get install g++ subversi
 
 ### Each Step Explained
 
-Here is all the steps you need to get your Ubuntu installation up and running with a great compiler. Just copy each line individually intop the command line, and by the end you will be redy to develop on Linux. These commands are the same as the above commands, but are seperated for easy viewing.
+Here is all the steps you need to get your Ubuntu installation up and running with a great compiler. Just copy each line individually into the command line, and by the end you will be redy to develop on Linux. These commands are the same as the above commands, but are seperated for easy viewing.
 
 #### Initialize Environment
 
