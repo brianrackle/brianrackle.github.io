@@ -30,11 +30,11 @@ Then Choose an Image, selecting Ubuntu, and then Ubuntu Server 14.04 LTS:
 
 <img src="/assets/moving-to-ubuntu/choose-ubuntu-image.png" alt="choose image" width="400">
 
-Now configure your VM with the following options. Basic A1 is the second cheapest at $55 per month nd Basic A0 is cheaper at $13 per month. I recommend using Basic A1 at least while you setup the machine so that it doesn't take hours, you can switch to Basic A0 afterwards. The user name and password will be used to log into your VM:
+Now configure your VM with the following options. Basic A1 is the second cheapest at $55 per month and Basic A0 is cheaper at $13 per month. I recommend using Basic A1 at least while you setup the machine so that it doesn't take hours, you can switch to Basic A0 afterwards. The user name and password will be used to log into your VM:
 
 <img src="/assets/moving-to-ubuntu/vm-config.png" alt="vm config" width="400">
 
-Next you will choose the region for your VM, generally you want the VM close to you. And also set the "Cloud Server DNS Name", which is the the address you will use to SSH into the VM. To add other "services" to your VM such as RDP or VNC you will add the appropriate endpoints to the Cloud Service you are setting up now.
+Next you will choose the region for your VM, generally you want the VM close to you. Also set the "Cloud Server DNS Name", which is the the address you will use to SSH into the VM. To add other "services" to your VM such as RDP or VNC you will add the appropriate endpoints to the Cloud Service you are setting up now.
 
 <img src="/assets/moving-to-ubuntu/cloud-service.png" alt="cloud service" width="400">
 
@@ -73,6 +73,8 @@ sudo apt-get update && sudo apt-get upgrade && sudo apt-get install g++ subversi
 {% endhighlight %}
 
 ### Each Step Explained
+
+Here is all the steps you need to get your Ubuntu installation up and running with a great compiler. Just copy each line individually intop the command line, and by the end you will be redy to develop on Linux. These commands are the same as the above commands, but are seperated for easy viewing.
 
 #### Initialize Environment
 
