@@ -69,7 +69,7 @@ You can follow [each step individually](#each-step-explained), or you can just c
 This is all the steps for setting up your Ubuntu VM concatenated into a single command. After pasting this into your command prompt, you will have to stick around for a few minutes to type 'y' and 'enter' a few times. Do not close KiTTY or let your computer go to sleep because your session will time-out and your VM will not be set up properly. 
 
 {% highlight bash %}
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install g++ subversion cmake emacs git xdg-utils htop ncurses-dev && sudo mkdir repos && cd ~/repos/ && sudo mkdir clang && cd clang && sudo svn co http://llvm.org/svn/llvm-project/llvm/branches/release_35/ llvm && cd llvm/tools && sudo svn co http://llvm.org/svn/llvm-project/cfe/branches/release_35/ clang && cd ~/repos/clang && sudo mkdir build && cd build && sudo ../llvm/configure --enable-optimized --enable-targets=host --disable-compiler-version-checks && sudo make -j 8 && sudo make install && cd ~/repos/clang && sudo svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx && sudo mkdir build_libcxx && cd build_libcxx && sudo CC=clang CXX=clang++ cmake -G "Unix Makefiles" -DLIBCXX_CXX_ABI=libsupc++ -DLIBCXX_LIBSUPCXX_INCLUDE_PATHS="/usr/include/c++/4.8;/usr/include/x86_64-linux-gnu/c++/4.8" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr $HOME/repos/clang/libcxx && sudo make -j 8 && sudo make install && xdg-mime default emacs.desktop text/plain && cd ~/repos/ && sudo git clone https://github.com/brianrackle/brainstem_breakfast.git && cd brainstem_breakfast/source && sudo clang++ --std=c++14 --stdlib=libc++ main.cpp
+sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install g++ subversion cmake emacs git xdg-utils htop ncurses-dev -y && sudo mkdir repos && cd ~/repos/ && sudo mkdir clang && cd clang && sudo svn co http://llvm.org/svn/llvm-project/llvm/branches/release_35/ llvm && cd llvm/tools && sudo svn co http://llvm.org/svn/llvm-project/cfe/branches/release_35/ clang && cd ~/repos/clang && sudo mkdir build && cd build && sudo ../llvm/configure --enable-optimized --enable-targets=host --disable-compiler-version-checks && sudo make -j 8 && sudo make install && cd ~/repos/clang && sudo svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx && sudo mkdir build_libcxx && cd build_libcxx && sudo CC=clang CXX=clang++ cmake -G "Unix Makefiles" -DLIBCXX_CXX_ABI=libsupc++ -DLIBCXX_LIBSUPCXX_INCLUDE_PATHS="/usr/include/c++/4.8;/usr/include/x86_64-linux-gnu/c++/4.8" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr $HOME/repos/clang/libcxx && sudo make -j 8 && sudo make install && xdg-mime default emacs.desktop text/plain && cd ~/repos/ && sudo git clone https://github.com/brianrackle/brainstem_breakfast.git && cd brainstem_breakfast/source && sudo clang++ --std=c++14 --stdlib=libc++ main.cpp
 {% endhighlight %}
 
 ### Each Step Explained
@@ -81,9 +81,9 @@ Here is all the steps you need to get your Ubuntu installation up and running wi
 Here we update the software on the VM and install some new software.
 
 {% highlight bash %}
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install g++ subversion cmake emacs git xdg-utils htop ncurses-dev
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install g++ subversion cmake emacs git xdg-utils htop ncurses-dev -y
 sudo mkdir repos
 {% endhighlight %}
 
