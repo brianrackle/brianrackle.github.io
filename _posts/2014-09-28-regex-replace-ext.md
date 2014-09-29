@@ -7,7 +7,7 @@ tags: c++ regex replace token iterator string template stl
 author: brian
 ---
 
-Recently I was working with the STL regular expression library, found in `<regex>`. I was building a simple utility to identify tokens in a string and replace them with pre-defined values. First, I needed all replacements to occur in a single pass. Second, I needed to identify each token with it's paired replacement value. As an example, let's say I am using tokens to define specific directory paths. These are the tokens and their matching values:
+Recently I was working with the STL regular expression library, found in [`<regex>`](http://en.cppreference.com/w/cpp/regex/){:target="_blank"}. I was building a simple utility to identify tokens in a string and replace them with pre-defined values. First, I needed all replacements to occur in a single pass. Second, I needed to identify each token with it's paired replacement value. As an example, let's say I am using tokens to define specific directory paths. These are the tokens and their matching values:
 
 | Token | Value |
 |:-----:|:-----:|
@@ -16,15 +16,15 @@ Recently I was working with the STL regular expression library, found in `<regex
 
 I want to do a `regex_replace` on the string: {InstallDir}{MyApp}
 
-`regex_replace` is unable to to perform this job because it only takes a string as a formatter. The `fmt` variable can use character groups using the $xx syntax, however it can't differentiate between groups dynamically. I am no regular expression wizard, I try to keep the regular expressions short and understandable, but I think `regex_replace` will not be able to fulfill my needs here.
+`regex_replace` is unable to to perform this job because it only takes a string as a formatter. The `fmt` variable can use character groups using the $xx syntax, however it can't differentiate between groups dynamically. I am no regular expression wizard, but I think `regex_replace` will not be able to fulfill my needs here.
 
 ## Regex Iterators
 
-If `regex_replace` cannot match tokens to values, it is necessary to look through [`<regex>`](http://en.cppreference.com/w/cpp/regex/){:target="_blank"} to find something that will fill that roll. The prime candidate is `regex_token_iterator`, a ForwardIterator that allows tokenizing both matched and unmatched expressions. Using `regex_token_iterator` it is possible to iterate expressions, and uniquely identify unmatched expressions, matched expressions, and submatched expressions. Controlling what the tokenizer iterates is done through the `submatch`or`submatches` parameter of the constructor. `-1` iterates unmatched portions, `0` matches the entire regular expression, and values `1` and greater match groups/sub-matches.
+Luckily, I can construct a new `regex_replace` alternative using [`regex_token_iterator`](http://en.cppreference.com/w/cpp/regex/regex_token_iterator){:target='_blank"}, a ForwardIterator that allows tokenizing both matched and unmatched strings. With `regex_token_iterator` it is possible to iterate unmatched expressions, matched expressions, and submatched expressions. Controlling what the tokenizer iterates is done through the `int submatch`or `array submatches` parameter of the constructor. `-1` iterates unmatched portions, `0` matches the entire regular expression, and values `1` and greater match groups/sub-matches.
 
 ## Extending regex_replace
 
-Using the `regex_token_iterator` it will be possible to construct a new `regex_replace` function. The new function, rather than taking an `std::basic_string` or `CharT * `, will take a `std::function<std::basic_string (int submatch, std::basic_string)>`. In fact, the Boost [regex_replace](http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/ref/regex_replace.html){:target="_blank"}, upon which the STL version was built, provides a similar functionality. In Boost `fmt` is defined as a Formatter, which can be C style string, a container of CharT (like `std::basic_string`, although I suppose `std::vector<CharT>` would also work), or a "unary, binary or ternary functor that computes the replacement string from a function call".
+Using the `regex_token_iterator` it will be possible to construct a new `regex_replace` function. The new function, rather than taking an `std::basic_string` or `CharT * `, will take a `std::function<std::basic_string (int submatch, std::basic_string)>`. In fact, the Boost [regex_replace](http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/ref/regex_replace.html){:target="_blank"}, upon which the STL version was designed, provides a similar functionality. In Boost `fmt` is defined as a Formatter, which can be C style string, a container of CharT (like `std::basic_string`, although I suppose `std::vector<CharT>` would also work), or a "unary, binary or ternary functor that computes the replacement string from a function call".
 
 ## The Solution
 
