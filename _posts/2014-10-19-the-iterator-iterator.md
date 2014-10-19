@@ -123,3 +123,6 @@ for(auto it : iit(v))
 {% endhighlight %}  
 
 Here, v is sent to `ref` which only holds a reference to vector, no copies needed.
+
+Thanks for reading!
+Brian Rackle
