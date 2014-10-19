@@ -7,7 +7,7 @@ tags: c++ iterator type traits meta programming stl
 author: brian
 ---
 
-So I was recently thinking about the tedious process of writing and iterating for loop and why there is no functionality to retrieve an iterator with a range-based for loop. The range-based for loop was a hugely popular addition to C++, however it is limited to only returning dereferenced iterators. I don't think I need to convince anyone of why one would need an iterator rather than a dereferenced iterator, there are plenty of use cases to warrant such a loop. The issue here is that to iterate over a range using a classic for loop takes quite a lot of characters, even with the wonderful `auto it` that C++11 provides.
+So I was recently thinking about the tedious process of an iterating for loop and why there is no functionality to retrieve an iterator with a range-based for loop. The range-based for loop was a hugely popular addition to C++, however it is limited to only returning dereferenced iterators. I don't think I need to convince anyone of why one would need an iterator rather than a dereferenced iterator, there are plenty of use cases to warrant such a loop. The issue here is that to iterate over a range using a classic for loop takes quite a lot of characters, even with the wonderful `auto it` that C++11 provides.
 
 ## The Problem
 
