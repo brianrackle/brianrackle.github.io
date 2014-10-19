@@ -109,14 +109,17 @@ public:
 #### Usage
 
 {% highlight c++ %}
-for(auto it : iit(vector<int>{1,2,3,4})) { }
+for(auto it : iit(vector<int>{1,2,3,4})) 
+  std::cout << *it << std::endl;
 {% endhighlight %}  
 
 Without the `val` container to capture the r-value and store it, the vector would go out of scope.
 
 {% highlight c++ %}
 vector<int> v = {1,2,3,4};
-for(auto it : iit(v)) { }
+for(auto it : iit(v)) 
+  if(it == v.begin())
+    std::cout << *it << std::endl;
 {% endhighlight %}  
 
 Here, v is sent to `ref` which only holds a reference to vector, no copies needed.
