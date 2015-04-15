@@ -33,3 +33,5 @@ It turns out, with the help of alias templates, and some class based SFINAE not 
 <script src="https://gist.github.com/brianrackle/4a89852286745c0fe126.js"></script>
 
 We don't need to reinvent the same data structures over and over when we can just use what we already have and let the templates do all the work.
+
+Repo for this code: https://github.com/brianrackle/multi
