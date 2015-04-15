@@ -34,4 +34,4 @@ It turns out, with the help of alias templates, and some class based SFINAE not 
 
 We don't need to reinvent the same data structures over and over when we can just use what we already have and let the templates do all the work.
 
-Repo for this code: https://github.com/brianrackle/multi
+Repo for this code: [https://github.com/brianrackle/multi](https://github.com/brianrackle/multi)
